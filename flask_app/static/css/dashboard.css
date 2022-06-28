@@ -1,0 +1,157 @@
+
+
+
+*{
+    color: white;
+    font-family: 'VTFMisterPixelRegular'
+
+
+
+}
+
+.topnav {
+    display: flex;
+    background-color: rgba(0,0,0,0.8);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.active {
+
+    background-color: #ff0000;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 19px;
+    border:none
+}
+
+.active2 {
+
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 19px;
+    border:none
+}
+
+.imglogin{
+
+    margin-left: 45%;
+    margin-top: 30px;
+    padding: 15px
+
+
+} 
+
+.bienvenida{
+    margin-top: 50px;
+    padding: 15px;
+    margin-left: 25%;
+    height:80px;
+    width: 1000px;
+    border: 5px solid rgba(1, 12, 50, 0.3);
+    background: rgba(0,0,0,0.9);
+    border-radius: 100px;
+    color:white;
+    text-align: center;
+    font-size:18px;
+    letter-spacing: 10px;
+}
+
+.form-group{
+    color: rgb(255, 255, 255);
+}
+
+body{
+    background-image: url(wallpaperbetter.jpg);
+}
+
+h2{
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+
+table{
+    
+    width:100%;
+    table-layout:fixed;
+    
+
+    
+
+}
+
+
+
+.tbl-content{
+    font-size: 22px;
+    margin-top: 100px;
+    padding: 15px;
+    margin-left: 25%;
+    height:800px;
+    width: 1000px;
+    border: 5px solid rgba(1, 12, 50, 0.3);
+    margin-bottom: 25px;
+    background: rgba(0,0,0,0.9);
+    border-radius: 100px;
+    color:white;
+
+}
+
+.tbl-content2{
+    font-size: 22px;
+    margin-top: 100px;
+    padding: 15px;
+    margin-left: 25%;
+    height:1200px;
+    width: 1000px;
+    border: 5px solid rgba(1, 12, 50, 0.3);
+    margin-bottom: 25px;
+    background: rgba(0,0,0,0.9);
+    border-radius: 100px;
+    color:white;
+
+}
+
+.boton_mag{
+    background: rgba(0,0,0,0.9);
+}
+
+.logo{
+width: 100px;
+}
+
+.logo2{
+    width: 50px;
+}
+.btn_entrar_sala{
+    
+    border-radius: 20px;
+    color:rgb(5, 5, 5);
+    width: 120px;
+    height: 70px;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+td{
+    
+    padding: 30px;
+    text-align:center;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+
+}
+
+a{
+    padding: 10px;
+}
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/descripcion.css') }}" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/mr-pixel" type="text/css"/> 
+    <title>Salas</title>
+</head>
+
+<body>
+
+    <div class="topnav">
+                
+        <form action="/dashboard">
+            <!-- <a class="active" href="#dashboard">Dashboard</a> -->
+            <input type="submit" value="dashboard" class="active" />
+        </form>
+        <form action="/logout" method="POST">
+            <input type="submit" value="logout" class="active2" />
+        </form>
+    </div>
+
+
+<main>
+    <div class="container">
+
+        <h1 class="text-left">Bienvenido {{session ['user.nombre']}}!</h1>
+    
+            <div class="card-header bg-light">Sala Número: {{sala.id_sala}}</div>
+                <h2 class="card-title"> {{sala.nombre_sala}}</h2>
+                <h2 class="card-title">Descripción: </h2>
+                <p class="card-text">{{sala.descripcion}}</p>
+                
+            </div>
+        
+    </div>
+</main>
+</body>
+
+</html>

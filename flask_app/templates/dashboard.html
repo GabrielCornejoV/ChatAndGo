@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/mr-pixel" type="text/css"/> 
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <div class="topnav">
+                
+            <form action="/sala/nueva">
+            
+                <input type="submit" value="Crear Sala" class="active" />
+            </form>
+            <form action="/logout" method="POST">
+                <input type="submit" value="logout" class="active2" />
+            </form>
+            
+        </div>
+
+        <img class="imglogin" src= "static/img/logo.png">
+    
+        <div class="bienvenida">
+            <h1 class="texto_base">Bienvenido {{session ['user.nombre']}}!</h1>
+        </div>
+
+        
+
+            <div class='tbl-content'>
+                
+                <table class="table">
+                    <h2>MIS SALAS</h2>
+                    <thead class="tbl_header">
+                        
+                        <td>SALA</td>
+                        <td>DESCRIPCIÓN</td>
+                        <td>USUARIO</td>
+                        <td class="opciones">OPCIONES</td>
+                </thead>
+                    <tbody>
+                    
+                            {% for sala in salas %}
+                            <tr>
+                                {% if sala.id_usuario == session['user.id_usuario'] %}
+                                <td>{{ sala.nombre_sala }}</td>
+                                <td>{{ sala.descripcion }}</td>
+                                <td>{{ sala.nombre }}</td>
+                                <td>
+                                    <div class="">
+                                    <a href="/sala/{{sala.id_sala}}" class="options">Descripción</a>
+                                    <br>
+                                    <br>
+                                    <a href="/sala/editar/{{sala.id_sala}}" class="options">Editar</a>
+                                    <a href="/sala/eliminar/{{sala.id_sala}}" class="options">Eliminar</a>
+                                    {% endif %}
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        
+                    </table>
+            </div>
+            
+            <div class='tbl-content2'>
+            <table class="table">
+                <h2>TODAS LAS SALAS</h2>
+                <thead class="tbl_header">
+                    
+                    <td>SALA</td>
+                    <td>DESCRIPCIÓN</td>
+                    <td>USUARIO</td>
+                    <td class="opciones">OPCIONES</td>
+                </thead>
+                <tbody>
+                    {% for sala in salas %}
+                    <tr>
+                        <td>{{ sala.nombre_sala }}</td>
+                        <td> {{ sala.descripcion }}</td>
+                        <td> {{ sala.nombre }}</td>
+                        
+                            <td>
+                                <form class="form-signin" action="{{ url_for('chat') }}" method="POST">
+                                    <input value={{ session["user.nombre"] }} type="hidden" id="username" name="username" class="form-control" placeholder="Nombre de usuario" required>
+                                    <input type="hidden" value="{{ sala.nombre_sala }}" name="room" >
+                                    
+                                    
+                                    <a href="/chat" class="btn btn-warning"><img class="logo" src="static/img/gov2.png" alt="go"></a>
+                                    <!-- <button class="boton_mag" value="submit">Entrar a la Sala</button> -->
+                                </form>
+                            </td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+
+            </div>
+
+
+</main>
+</body>
+</html>

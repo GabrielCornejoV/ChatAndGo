@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chat</title>
+    <!--Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.6.0.min.js') }}"></script> <!-- Fuente: https://jquery.com/ -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/socket.io.min.js') }}"></script> <!-- Fuente: https://cdnjs.com/libraries/socket.io -->
+    <script type="text/javascript" charset="utf-8">
+        var socket;
+        $(document).ready(function () {
+            socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+            socket.on('connect', function () {
+                socket.emit('join', {});
+            });
+            socket.on('status', function (data) {
+                $('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
+                $('#chat').scrollTop($('#chat')[0].scrollHeight);
+                console.log("conectados!")
+            });
+            socket.on('message', function (data) {
+                $('#chat').val($('#chat').val() + data.msg + '\n');
+                $('#chat').scrollTop($('#chat')[0].scrollHeight);
+            });
+            $('#send').click(function (e) {
+                text = $('#text').val();
+                $('#text').val('');
+                socket.emit('text', { msg: text });
+            });
+        });
+        function leave_room() {
+            socket.emit('left', {}, function () {
+                socket.disconnect();
+                // go back to the login page
+                window.location.href = "{{ url_for('dashboard') }}";
+            });
+        }
+    </script>
+</head>
+
+<body class="text-center">
+
+    <div class="chatwindow">
+        <h2>Chat</h2>
+        <h2>Sala : {{session['room']}}</h2><br>
+        <textarea id="chat" cols="70" rows="10" placeholder="Aún no hay mensajes. empezar uno..."></textarea><br /><br />
+        <input type="text" id="text" size="60" placeholder="Introduzca su mensaje aquí" />
+        <button type="button" id="send" class="btn btn-success">ENVIAR</button><br /><br />
+        <center><button type="button" class="btn btn-danger" onclick=leave_room()>Dejar este Chat</button></center>
+    </div>
+</body>
+
+</html>

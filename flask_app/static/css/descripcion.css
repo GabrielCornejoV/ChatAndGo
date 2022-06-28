@@ -1,0 +1,61 @@
+*{
+
+    font-family: 'VTFMisterPixelRegular'
+
+}
+
+body{
+    background-image: url(98.jpg);
+
+} 
+
+
+.topnav {
+    display: flex;
+    background-color: rgba(0,0,0,0.8);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+
+
+.active {
+
+    background-color: #ff0000;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    border:none
+}
+
+.active2 {
+
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    border:none
+}
+
+.container { 
+
+    display: inline;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    width:400px;
+    height:500px;
+    border-radius: 10px;
+    color:white
+
+
+}
+
+main{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

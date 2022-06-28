@@ -1,0 +1,120 @@
+*{
+
+    font-family: 'VTFMisterPixelRegular'
+
+}
+
+body{
+    background-image: url(98.jpg);
+
+} 
+
+
+.topnav {
+    display: flex;
+    background-color: rgba(0,0,0,0.8);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+
+
+.active {
+
+    background-color: #ff0000;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    border:none
+}
+
+.active2 {
+
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    border:none
+}
+
+
+
+.h2{
+    letter-spacing: 10px;
+    text-align: center;
+    padding-top: 30px;
+    
+}
+
+label{
+    font-size: 25px;
+}
+
+
+.form-group { 
+    margin-left: 25%;
+    width: 200px;
+    margin-top: 35px; 
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 4px;
+
+} 
+
+.form-control{
+    background: rgba(0,0,0,0.8);
+}
+
+main{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container { 
+
+    display: inline;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    width:600px;
+    height:800px;
+    border-radius: 10px;
+    color:white
+
+
+}
+
+
+.input2{
+    margin-left: 35px;
+    padding-top: 20px;
+    
+} 
+.imglogin{
+
+    margin-left: 18%;
+    margin-top: 30px;
+    display: block;
+
+} 
+
+
+
+.actualizar_sala
+{
+    margin-left: 65%;
+    height: 40px;
+    border: none;
+    text-transform: uppercase;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}

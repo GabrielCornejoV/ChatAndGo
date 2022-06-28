@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+            integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" /> -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit.css') }}" />
+        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/mr-pixel" type="text/css"/>
+        <title>Editar Sala</title>
+    </head>
+
+<body>
+
+    <!-- <a class="navbar-brand" href="#">Editar sala</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href='/'>Home</a> -->
+            <!-- </li>
+        </ul> -->
+        <div class="topnav">
+                
+                <form action="/dashboard">
+                    <!-- <a class="active" href="#dashboard">Dashboard</a> -->
+                    <input type="submit" value="dashboard" class="active" />
+                </form>
+                <form action="/logout" method="POST">
+                    <input type="submit" value="logout" class="active2" />
+                </form>
+            </div>
+
+        </div>
+
+
+
+    <main class="maincontainer">
+    <div class="container">
+        {% with messages = get_flashed_messages(category_filter=['error_act_sala']) %}
+        {% if messages %}
+        <div class="alert alert-warning" role="alert">
+            <strong>Información Incorrecta</strong>
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <form action="/sala/update" method="post">
+            <h1 class="h2">Editar {{sala.nombre_sala}} </h1>
+            <div class="form-group">
+                <input type="hidden" name="id_sala" value={{sala.id_sala}}>
+                <label for="nombre_sala">Nombre:</label>
+                <textarea class="form-group" name="nombre_sala" rows="1">{{sala.nombre_sala}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripcion:</label>
+                <textarea class="form-group" name="descripcion" rows="3">{{sala.descripcion}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="administrador">Administrador:</label>
+                <input type="text" class="form-group" name="administrador" value={{sala.administrador}}>
+            </div>
+            
+            <label for="mayor_edad">Mayor de edad?</label>
+            {% if sala.mayor_edad == 1 %}
+            <div class="form-group">
+                <label class="form-check-label">
+                    <input checked="checked" type="radio" class="form-check-input" value="1" name="mayor_edad">Si
+                </label>
+            </div>
+            {% else %}
+            <div class="form-group">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" value="1" name="mayor_edad">Yes
+                </label>
+            </div>
+            {% endif %}
+
+            {% if sala.mayor_edad == 0 %}
+            <div class="form-group">
+                <label class="form-check-label">
+                    <input checked="checked" type="radio" class="form-check-input" value="0" name="mayor_edad">No
+                </label>
+            </div>
+            {% else %}
+            <div class="form-group">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" value="0" name="mayor_edad">No
+                </label>
+            </div>
+            {% endif %}
+            <div class="actualiza">
+                <input type="submit" value="Actualizar Sala" class="actualizar_sala" />
+            </div>
+        </form>
+    </div>
+
+    </main>
+</body>
+
+</html>

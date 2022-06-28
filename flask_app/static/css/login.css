@@ -1,0 +1,105 @@
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    color: white;
+    
+}
+
+*/
+*{
+
+    font-family: 'VTFMisterPixelRegular'
+
+}
+
+body{
+    background-image: url(98.jpg);
+
+} 
+
+
+
+label{
+    font-size: 25px;
+}
+.input2 { 
+    width: 200px;
+    margin-top: 30px; 
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 22px;
+    border-radius: 4px;
+
+} 
+
+.form-control{
+    background: rgba(0,0,0,0.8);
+}
+
+main{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login { 
+    display: inline;
+    background: rgba(0,0,0,0.7);
+    width:400px;
+    height:800px;
+    border-radius: 10px;
+    color:white
+
+
+}
+
+
+.input2{
+    margin-left: 35px;
+    padding-top: 20px;
+    
+} 
+.imglogin{
+
+    margin-left: 18%;
+    margin-top: 30px;
+    display: block;
+
+} 
+
+
+.btn2{
+    margin-left: 20%;
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    text-transform: uppercase;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.317);
+}
+
+.btn3{
+    margin-left: 60%;
+    
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    font-size: large;
+    border: 2px solid rgba(255, 255, 255, 0.317);
+}

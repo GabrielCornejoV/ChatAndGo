@@ -1,0 +1,96 @@
+*{
+
+    font-family: 'VTFMisterPixelRegular'
+
+}
+
+body{
+    background-image: url(wallpaperbetter.jpg);
+
+} 
+
+
+h2{
+    letter-spacing: 10px;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 40px;
+    
+}
+
+label{
+    font-size: 25px;
+    
+}
+.form-group { 
+    margin-left: 25%;
+    width: 300px;
+    margin-top: 35px; 
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 4px;
+
+} 
+
+
+.form-control{
+    background: rgba(0,0,0,0.8);
+    width: 200px;
+    height: 20px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+main{
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container { 
+
+    display: inline;
+    padding: 20px;
+    background: rgba(0,0,0,0.9);
+    width:600px;
+    height:1600px;
+    border-radius: 10px;
+    color:white
+
+
+}
+
+
+.input2{
+    margin-left: 35px;
+    padding-top: 20px;
+    
+} 
+.imglogin{
+
+    margin-left: 18%;
+    margin-top: 30px;
+    display: block;
+
+} 
+
+
+
+
+
+.btn_create{
+        margin-top: 90px;
+        margin-left: 40%;
+        height: 40px;
+        border: none;
+        text-transform: uppercase;
+        padding: 0 20px;
+        border-radius: 10px;
+        font-weight: 900;
+        cursor: pointer;
+        transition: all .25s ease-in-out;
+    
+}
